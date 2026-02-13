@@ -674,52 +674,55 @@
     </div>
 
     <script>
-        document.getElementById('wedding-form').addEventListener('submit', function (e) {
-            e.preventDefault();
+        document.getElementById('wedding-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            const WORKER_URL = "https://wedding-bot-proxy.maximkau.workers.dev/";
+    const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwdIxlWIdLBdzaBt-G9nsuoEh8SINsGEPIqY4YYEodrH9HRBu6va-FyLYZ2IJhyluqCTw/exec"; 
 
-            const btn = document.getElementById('submit-btn');
-            const originalText = btn.innerText;
+    const btn = document.getElementById('submit-btn');
+    const originalText = btn.innerText;
 
-            const name = this.name.value;
-            const attendance = this.attendance.value;
-            const plusOne = this.plus_one && this.plus_one.checked ? "Да ✅" : "Нет ❌";
-            const alcohol = this.alcohol.value;
-            const food = this.food.value || "Нет пожеланий";
+    const name = this.name.value;
+    const attendance = this.attendance.value;
+    
+    const plusOneCheckbox = this.querySelector('input[name="plus_one"]');
+    const plusOne = plusOneCheckbox && plusOneCheckbox.checked ? "Да ✅" : "Нет ❌";
+    
+    const alcohol = this.alcohol.value;
+    const food = this.food.value || "Нет пожеланий";
 
-            const message = `
+    const message = `
 🔔 *Новая анкета гостя!*
 👤 *Имя:* ${name}
 📍 *Присутствие:* ${attendance}
 👫 *С парой (+1):* ${plusOne}
 🍷 *Алкоголь:* ${alcohol}
 🍽 *Пожелания по еде:* ${food}
-                    `;
+    `;
 
-            btn.disabled = true;
-            btn.innerText = 'Отправляем...';
+    btn.disabled = true;
+    btn.innerText = 'Отправляем...';
 
-            fetch(WORKER_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: message })
-            })
-                .then(response => {
-                    if (response.ok) {
-                        document.getElementById('wedding-form').style.display = 'none';
-                        document.getElementById('success-message').style.display = 'block';
-                    } else {
-                        throw new Error('Ошибка сервера');
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById('error-message').style.display = 'block';
-                    btn.disabled = false;
-                    btn.innerText = originalText;
-                });
-        });
+    fetch(GOOGLE_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: message })
+    })
+    .then(() => {
+        document.getElementById('wedding-form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+        window.scrollTo({ top: document.getElementById('success-message').offsetTop - 100, behavior: 'smooth' });
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        document.getElementById('error-message').style.display = 'block';
+        btn.disabled = false;
+        btn.innerText = originalText;
+    });
+});
     </script>
 
 </body>
