@@ -340,6 +340,24 @@
             margin-top: 10px;
         }
 
+        .loc-addr {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-text);
+            margin: 15px auto 25px;
+            max-width: 90%;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        #map_656227901 {
+            border-radius: 20px;
+            margin-top: 20px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
         .rsvp-section {
             background: #fff;
             padding: 40px 30px;
@@ -544,7 +562,7 @@
             Дорогие друзья,<br>
             приглашаем вас разделить с нами<br>
             этот особенный день!<br>
-            <span class="big-date font-title accent">13.03.2026 В 20:00</span>
+            <span class="big-date font-title accent">13.03.2026 В 19:00</span>
         </section>
         
 
@@ -573,17 +591,17 @@
                 </svg>
                 <div class="marker-heart" style="top:40px; left:52px;">❤</div>
                 <div class="t-event pos-1">
-                    <div class="t-time font-hand">20:00</div>
+                    <div class="t-time font-hand">18:00</div>
                     <div class="t-desc">сбор гостей</div>
                 </div>
                 <div class="marker-heart" style="top:240px; right:52px;">❤</div>
                 <div class="t-event pos-2">
-                    <div class="t-time font-hand">20:30</div>
+                    <div class="t-time font-hand">18:30</div>
                     <div class="t-desc">начало</div>
                 </div>
                 <div class="marker-heart" style="top:440px; left:52px;">❤</div>
                 <div class="t-event pos-3">
-                    <div class="t-time font-hand">00:00</div>
+                    <div class="t-time font-hand">21:00</div>
                     <div class="t-desc">баня</div>
                 </div>
             </div>
@@ -591,14 +609,15 @@
 
         <section class="location-section">
             <h2 class="section-title font-hand">Локация</h2>
+            <div class="loc-title font-hand">Дом Радушие</div>
             <div class="polaroid">
-                <img src="https://placehold.co/400x300/png?text=DOM+RADUSHIE" alt="Дом">
+                <img src="house1.png" alt="Дом">
             </div>
-            <iframe id="map_656227901" width="100%" height="600px"
+            <div class="loc-addr">Приморская улица, 3 <br> ​с. Прохладное, Надеждинский район, Приморский край</div>
+            <iframe id="map_656227901" width="100%" height="400px"
                 src="https://makemap.2gis.ru/widget?data=eJw1j1tPg0AQhf_L-Eqa5bZckj5ojUTDQzEmxpo-EBh0m4Uly1htCf_dAXQezzfnzJkRjK3RYp2haZGswgHS9xHo0iOk8IAlfVkEB3prerS08BEqo41lfiOqphGCOSnSs0M8XQuqszvxlhdndV-ck-xW5FEx0M4V-QuzXSLy0_Ppe7tlW41DZVVPynRsZuH62NX4A6kr_mdy4GMtd5lP_zXbG9UR71eGH1BdSUtx1_c2whUyDp3A3_iejJLwyAGqhjQOounoQFv2ezOo9eIIuiRI190kjv0kCMNYRtIBPfM1z5XC83kC6UXc0JiWieRY7m60fv1E1IdFbUo94PQLAOloMQ"
                 sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-            <div class="loc-title font-hand">Дом Радушие</div>
-            <div class="loc-addr"></div>
+            
         </section>
 
         <section class="info-block">
