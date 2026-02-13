@@ -18,6 +18,11 @@
             --accent-color: #D64858;
             --text-color: #333333;
             --gray-text: #666666;
+            --burgundy: #800020;
+            --black: #1A1A1A;
+            --mink: #A58A7B;
+            --forest: #26342B;
+            --cream: #F5E6D3;
         }
 
         * {
@@ -209,12 +214,12 @@
 
         .timing-section {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-size: 48px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .timing-wrapper {
@@ -280,32 +285,19 @@
             border-radius: 50%;
         }
 
-        .info-block {
+        .sauna-note {
+            background: #f0e6d2;
+            padding: 25px;
+            margin: 0 20px 50px;
+            border-radius: 30px;
             text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 20px;
+            border: 1px dashed #b4a88c;
         }
 
-        .info-desc {
-            font-size: 22px;
+        .sauna-note p {
+            font-size: 20px;
+            color: #5d5440;
             line-height: 1.4;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-
-        .palette {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .color-dot {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .location-section {
@@ -355,7 +347,122 @@
             border-radius: 20px;
             margin-top: 20px;
             border: 1px solid #eee;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .dress-code-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .main-palette {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .palette-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 140px;
+        }
+
+        .ball-ladies {
+            background-color: var(--burgundy);
+        }
+
+        .ball-gents {
+            background: linear-gradient(135deg, var(--black) 60%, var(--burgundy) 40%);
+        }
+
+        .color-ball-large {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 4px solid #fff;
+        }
+
+        .gender-label {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .color-ratio {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.2;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .sub-palette-title {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #999;
+        }
+
+        .sub-palette {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0 40px;
+        }
+
+        .color-dot-add {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow-x: auto;
+            display: flex;
+            gap: 15px;
+            padding: 0 20px 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            min-width: 280px;
+            height: 380px;
+            background: #eee;
+            border-radius: 20px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-block {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-desc {
+            font-size: 22px;
+            line-height: 1.4;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
 
         .rsvp-section {
@@ -375,6 +482,41 @@
             font-size: 36px;
             margin-bottom: 30px;
             color: var(--accent-color);
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            padding-left: 2px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #444;
+            line-height: 1.2;
+        }
+
+        .check-item:hover {
+            opacity: 0.8;
+        }
+
+        .check-item input {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            flex-shrink: 0;
+            cursor: pointer;
+            accent-color: var(--accent-color);
+            position: relative;
+            top: -1px;
         }
 
         .input-group {
@@ -518,19 +660,13 @@
                 margin: 50px auto;
             }
 
+            .slider-container {
+                justify-content: center;
+                overflow-x: visible;
+            }
+
             body {
                 background-image: radial-gradient(circle at center, #fffdf5 30%, #f5f0e1 100%);
-            }
-        }
-
-        @media (max-width: 767px) {
-            .landing-container {
-                max-width: 600px;
-            }
-
-            .color-dot {
-                width: 40px;
-                height: 40px;
             }
         }
     </style>
@@ -543,16 +679,13 @@
         <header class="header-section">
             <div class="font-title top-sub">наконец-то</div>
             <h1 class="main-title font-title accent">МЫ ЖЕНИМСЯ</h1>
-
             <div class="dialogue-container font-hand">
                 <div class="dialogue-text d-left">- интересно, кто будет моим мужем?</div>
                 <div class="dialogue-text d-right">- им буду я!</div>
             </div>
-
             <div class="kids-photo-container">
                 <img src="img1.png" class="kids-img" alt="Мы">
             </div>
-
             <div class="ribbon font-hand">
                 вы приглашены &bull; вы приглашены &bull; вы приглашены
             </div>
@@ -562,9 +695,8 @@
             Дорогие друзья,<br>
             приглашаем вас разделить с нами<br>
             этот особенный день!<br>
-            <span class="big-date font-title accent">13.03.2026 В 19:00</span>
+            <span class="big-date font-title accent">13.03.2026 В 17:30</span>
         </section>
-        
 
         <section class="calendar-wrapper center">
             <div class="font-hand" style="font-size: 28px; margin-bottom: 10px;">март 2026</div>
@@ -591,49 +723,79 @@
                 </svg>
                 <div class="marker-heart" style="top:40px; left:52px;">❤</div>
                 <div class="t-event pos-1">
-                    <div class="t-time font-hand">18:00</div>
+                    <div class="t-time font-hand">17:00</div>
                     <div class="t-desc">сбор гостей</div>
                 </div>
                 <div class="marker-heart" style="top:240px; right:52px;">❤</div>
                 <div class="t-event pos-2">
-                    <div class="t-time font-hand">18:30</div>
+                    <div class="t-time font-hand">17:30</div>
                     <div class="t-desc">начало</div>
                 </div>
                 <div class="marker-heart" style="top:440px; left:52px;">❤</div>
                 <div class="t-event pos-3">
-                    <div class="t-time font-hand">21:00</div>
+                    <div class="t-time font-hand">20:30</div>
                     <div class="t-desc">баня</div>
                 </div>
             </div>
         </section>
 
+        <section class="sauna-note font-hand">
+            <p>
+                Вечер продолжится отдыхом в <span class="accent">бане</span> и горячем <span class="accent">чане</span>
+                под открытым небом. (для желающих) <br>
+                Пожалуйста, не забудьте взять с собой <strong>купальные принадлежности</strong>
+                (купальники/плавки/полотенца) и
+                хорошее настроение! 🌿
+            </p>
+        </section>
+
         <section class="location-section">
             <h2 class="section-title font-hand">Локация</h2>
+            <div class="polaroid"><img src="house1.png" alt="Дом"></div>
             <div class="loc-title font-hand">Дом Радушие</div>
-            <div class="polaroid">
-                <img src="house1.png" alt="Дом">
+            <div class="loc-addr">
+                📍 Приморская улица, 3 <br>
+                с. Прохладное, Надеждинский район, Приморский край
             </div>
-            <div class="loc-addr">Приморская улица, 3 <br> ​с. Прохладное, Надеждинский район, Приморский край</div>
             <iframe id="map_656227901" width="100%" height="400px"
                 src="https://makemap.2gis.ru/widget?data=eJw1j1tPg0AQhf_L-Eqa5bZckj5ojUTDQzEmxpo-EBh0m4Uly1htCf_dAXQezzfnzJkRjK3RYp2haZGswgHS9xHo0iOk8IAlfVkEB3prerS08BEqo41lfiOqphGCOSnSs0M8XQuqszvxlhdndV-ck-xW5FEx0M4V-QuzXSLy0_Ppe7tlW41DZVVPynRsZuH62NX4A6kr_mdy4GMtd5lP_zXbG9UR71eGH1BdSUtx1_c2whUyDp3A3_iejJLwyAGqhjQOounoQFv2ezOo9eIIuiRI190kjv0kCMNYRtIBPfM1z5XC83kC6UXc0JiWieRY7m60fv1E1IdFbUo94PQLAOloMQ"
                 sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-            
         </section>
 
-        <section class="info-block">
+        <section class="dress-code-section">
             <h2 class="section-title font-hand">Дресс-код</h2>
             <p class="info-desc font-hand">
-                Мы будем очень благодарны, если вы поддержите <br>
-                атмосферу нашей свадьбы в стиле <span class="accent">Рустик</span> <br>
-                и выберете наряды в цветах нашей палитры:
+                Наша свадьба пройдет в стиле рустик, для которого мы подобрали палитру. <br>
+                Будем благодарны, если вы поддержите её в своих нарядах:
             </p>
-            <div class="palette">
-                <div class="color-dot" style="background-color: #E2D1B9;"></div>
-                <div class="color-dot" style="background-color: #B4BFA1;"></div>
-                <div class="color-dot" style="background-color: #D64858;"></div>
-                <div class="color-dot" style="background-color: #8B5E3C;"></div>
-                <div class="color-dot" style="background-color: #556B2F;"></div>
+
+            <div class="main-palette">
+                <div class="palette-item">
+                    <div class="color-ball-large ball-ladies"></div>
+                    <span class="gender-label font-hand">Леди</span>
+                    <span class="color-ratio">Бургунди<br>основной</span>
+                </div>
+                <div class="palette-item">
+                    <div class="color-ball-large ball-gents"></div>
+                    <span class="gender-label font-hand">Джентельмены</span>
+                    <span class="color-ratio">Черный +<br>акцент бургунди</span>
+                </div>
             </div>
+
+            <p class="font-hand sub-palette-title">Дополнительные цвета (10-20%):</p>
+            <div class="sub-palette">
+                <div class="color-dot-add" style="background-color: var(--mink);" title="Древесный беж"></div>
+                <div class="color-dot-add" style="background-color: var(--forest);" title="Лесной зеленый"></div>
+                <div class="color-dot-add" style="background-color: var(--cream);" title="Кремовый"></div>
+            </div>
+
+            <div class="slider-container">
+                <div class="slide"><img src="collage1.jpg" alt="Пример нарядов 1"></div>
+                <div class="slide"><img src="collage2.jpg" alt="Пример нарядов 2"></div>
+                <div class="slide"><img src="collage3.jpg" alt="Пример нарядов 3"></div>
+            </div>
+            <p class="font-hand" style="color: #bbb; margin-top: 10px; font-size: 18px;">← листайте примеры образов →
+            </p>
         </section>
 
         <section class="info-block" style="background-color: rgba(214, 72, 88, 0.03);">
@@ -649,17 +811,31 @@
             <h3 class="rsvp-title font-hand">Анкета гостя</h3>
             <form id="wedding-form">
                 <div class="input-group">
-                    <label>Ваше Имя</label>
+                    <label>Ваше имя</label>
                     <input type="text" name="name" class="input-field" placeholder="Пример: Максим" required>
                 </div>
 
                 <div class="input-group">
-                    <label>Присутствие</label>
+                    <label>Присутствие на банкете</label>
                     <select name="attendance" class="input-field">
                         <option value="Я буду">С удовольствием приду</option>
                         <option value="Не смогу">К сожалению, не смогу</option>
                     </select>
+                </div>
 
+                <div class="input-group">
+                    <label>Придете ли вы на регистрацию в ЗАГС?</label>
+                    <p
+                        style="font-size: 13px; color: #888; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">
+                        13 марта 2026 в 09:00
+                    </p>
+                    <select name="zags" class="input-field">
+                        <option value="Да, буду в ЗАГСе">Да, с удовольствием!</option>
+                        <option value="Нет, не буду в ЗАГСе">К сожалению, нет</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
                     <label class="checkbox-group">
                         <input type="checkbox" name="plus_one" value="Да">
                         Приду с парой (+1)
@@ -667,24 +843,43 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Пожелания по напиткам</label>
-                    <select name="alcohol" class="input-field">
-                        <option value="Без алкоголя">Без алкоголя</option>
-                        <option value="Вино/Шампанское">Вино/Шампанское</option>
-                        <option value="Крепкий алкоголь">Крепкий алкоголь</option>
-                        <option value="Всего понемногу">Всего понемногу</option>
-                    </select>
+                    <label>Пожелания по напиткам (можно несколько)</label>
+                    <div class="checkbox-list">
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Без алкоголя">
+                            <span>Без алкоголя</span>
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Белое вино">
+                            <span>Белое вино</span>
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Красное вино">
+                            <span>Красное вино</span>
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Игристое вино">
+                            <span>Игристое вино</span>
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Крепкий алкоголь">
+                            <span>Крепкий алкоголь</span>
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="alcohol" value="Свой вариант в пожеланиях">
+                            <span>Свой вариант в пожеланиях</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Пожелания по еде / Аллергии</label>
+                    <label>Пожелания по еде / аллергии / напиткам</label>
                     <textarea name="food" class="input-field"
                         placeholder="Например: аллергия на орехи, не ем мясо..."></textarea>
                 </div>
 
                 <button type="submit" id="submit-btn" class="btn-submit font-title">Отправить ответ</button>
             </form>
-
             <div id="success-message" class="msg-box msg-success font-hand">Спасибо! Ваш ответ отправлен ❤</div>
             <div id="error-message" class="msg-box msg-error font-hand">Произошла ошибка :(</div>
         </section>
@@ -692,57 +887,54 @@
     </div>
 
     <script>
-        document.getElementById('wedding-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+        document.getElementById('wedding-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwdIxlWIdLBdzaBt-G9nsuoEh8SINsGEPIqY4YYEodrH9HRBu6va-FyLYZ2IJhyluqCTw/exec";
+            const btn = document.getElementById('submit-btn');
+            const originalText = btn.innerText;
 
-    const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwdIxlWIdLBdzaBt-G9nsuoEh8SINsGEPIqY4YYEodrH9HRBu6va-FyLYZ2IJhyluqCTw/exec"; 
+            const name = this.name.value;
+            const attendance = this.attendance.value;
+            const zags = this.zags.value;
 
-    const btn = document.getElementById('submit-btn');
-    const originalText = btn.innerText;
+            const plusOneCheckbox = this.querySelector('input[name="plus_one"]');
+            const plusOne = plusOneCheckbox && plusOneCheckbox.checked ? "Да ✅" : "Нет ❌";
 
-    const name = this.name.value;
-    const attendance = this.attendance.value;
-    
-    const plusOneCheckbox = this.querySelector('input[name="plus_one"]');
-    const plusOne = plusOneCheckbox && plusOneCheckbox.checked ? "Да ✅" : "Нет ❌";
-    
-    const alcohol = this.alcohol.value;
-    const food = this.food.value || "Нет пожеланий";
+            const alcoholCheckboxes = this.querySelectorAll('input[name="alcohol"]:checked');
+            const alcohol = Array.from(alcoholCheckboxes).map(cb => cb.value).join(', ') || "Не выбрано";
 
-    const message = `
-🔔 *Новая анкета гостя!*
+            const food = this.food.value || "Нет пожеланий";
+
+            const message = `🔔 *Новая анкета гостя!*
 👤 *Имя:* ${name}
-📍 *Присутствие:* ${attendance}
+📍 *Банкет:* ${attendance}
+🏛 *ЗАГС (9:00):* ${zags}
 👫 *С парой (+1):* ${plusOne}
-🍷 *Алкоголь:* ${alcohol}
-🍽 *Пожелания по еде:* ${food}
-    `;
+🍷 *Напитки:* ${alcohol}
+🍽 *Пожелания:* ${food}`;
 
-    btn.disabled = true;
-    btn.innerText = 'Отправляем...';
+            btn.disabled = true;
+            btn.innerText = 'Отправляем...';
 
-    fetch(GOOGLE_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text: message })
-    })
-    .then(() => {
-        document.getElementById('wedding-form').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        window.scrollTo({ top: document.getElementById('success-message').offsetTop - 100, behavior: 'smooth' });
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-        document.getElementById('error-message').style.display = 'block';
-        btn.disabled = false;
-        btn.innerText = originalText;
-    });
-});
+            fetch(GOOGLE_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: message })
+            })
+                .then(() => {
+                    document.getElementById('wedding-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    window.scrollTo({ top: document.getElementById('success-message').offsetTop - 100, behavior: 'smooth' });
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    document.getElementById('error-message').style.display = 'block';
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                });
+        });
     </script>
-
 </body>
 
 </html>
