@@ -743,6 +743,14 @@
                 display: flex;
             }
 
+            .prev-btn {
+                left: -65px;
+            }
+
+            .next-btn {
+                right: -65px;
+            }
+
             .landing-container {
                 max-width: 100%;
             }
@@ -786,15 +794,24 @@
                 margin: 50px auto;
             }
 
+            .slider-wrapper {
+                max-width: 400px;
+                margin: 40px auto;
+                position: relative;
+            }
+
             .slider-container {
-                justify-content: center;
+                display: flex;
+                gap: 0;
                 overflow-x: hidden;
-                gap: 30px;
+                justify-content: flex-start;
+                scroll-behavior: smooth;
             }
 
             .slide {
-                min-width: 300px;
-                height: 500px;
+                flex: 0 0 100%;
+                width: 100%;
+                height: 600px;
             }
 
             body {
@@ -894,7 +911,7 @@
                 sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
         </section>
 
-        <section class="dress-code-section reveal ">
+        <section class="dress-code-section reveal">
             <h2 class="section-title font-hand">Дресс-код</h2>
             <p class="info-desc font-hand">
                 Наша свадьба пройдет в стиле рустик, для которого мы подобрали палитру. <br>
@@ -920,23 +937,28 @@
                     <div class="color-dot-add" style="background-color: var(--mink);"></div>
                     <span class="color-label-sub">Древесный беж</span>
                 </div>
-
                 <div class="palette-item-sub">
                     <div class="color-dot-add" style="background-color: var(--forest);"></div>
                     <span class="color-label-sub">Таежная хвоя</span>
                 </div>
-
                 <div class="palette-item-sub">
                     <div class="color-dot-add" style="background-color: var(--cream);"></div>
                     <span class="color-label-sub">Кремовый</span>
                 </div>
             </div>
 
-            <div class="slider-container">
-                <div class="slide"><img src="collage1.jpg" alt="Пример нарядов 1"></div>
-                <div class="slide"><img src="collage2.jpg" alt="Пример нарядов 2"></div>
-                <div class="slide"><img src="collage3.jpg" alt="Пример нарядов 3"></div>
+            <div class="slider-wrapper">
+                <button class="slider-nav-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+
+                <div class="slider-container" id="dress-slider">
+                    <div class="slide"><img src="collage1.jpg" alt="Образ 1"></div>
+                    <div class="slide"><img src="collage2.jpg" alt="Образ 2"></div>
+                    <div class="slide"><img src="collage3.jpg" alt="Образ 3"></div>
+                </div>
+
+                <button class="slider-nav-btn next-btn" onclick="moveSlide(1)">❯</button>
             </div>
+
             <p class="font-hand" style="color: #bbb; margin-top: 10px; font-size: 18px;">← листайте примеры образов →
             </p>
         </section>
